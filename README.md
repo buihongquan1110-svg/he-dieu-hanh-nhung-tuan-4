@@ -19,12 +19,12 @@ unzip wget rsync fastjar java-wrappers bison flex texinfo -y
 cd ~
 ```
 
-- Clone Buildroot từ Github
+- Clone Buildroot từ Github:
 ```bash
 git clone https://github.com/buildroot/buildroot.git
 ```
 
-- Di chuyển vào thư mục Buildroot
+- Di chuyển vào thư mục Buildroot:
 ```bash
 cd buildroot
 ```
