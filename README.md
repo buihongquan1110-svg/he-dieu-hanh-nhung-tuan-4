@@ -6,8 +6,10 @@
 
 # II. Các bước thực hiện
 ## Bước 1: Cài đặt các gói phụ thuộc
+```bash
 sudo apt update
 sudo apt install build-essential libncurses-dev \
-git bc bison flex texinfo unzip wget rsync \
-libssl-dev python3 python3-pip python3-setuptools \
-libcurl4-openssl-dev -y
+python3-dev python3-setuptools python3-pip \
+libssl-dev git bc bzr cvs mercurial \
+unzip wget rsync fastjar java-wrappers bison flex texinfo -y
+```
