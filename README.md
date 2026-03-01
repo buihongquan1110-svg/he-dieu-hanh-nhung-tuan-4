@@ -13,3 +13,8 @@ python3-dev python3-setuptools python3-pip \
 libssl-dev git bc bzr cvs mercurial \
 unzip wget rsync fastjar java-wrappers bison flex texinfo -y
 ```
+## Bước 2: Tải và chuẩn bị Buildroot
+- Di chuyển thư mục về home:
+  ```bash
+  cd ~
+  ```
