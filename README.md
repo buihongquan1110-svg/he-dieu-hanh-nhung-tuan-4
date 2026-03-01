@@ -18,3 +18,60 @@ unzip wget rsync fastjar java-wrappers bison flex texinfo -y
   ```bash
   cd ~
   ```
+
+- Clone Buildroot từ Github
+```bash
+git clone https://github.com/buildroot/buildroot.git
+```
+
+- Di chuyển vào thư mục Buildroot
+```bash
+cd buildroot
+```
+
+## Bước 3: Làm sạch cấu hình cũ (nếu có)
+```bash
+make distclean
+```
+
+## Bước 4: Cấu hình cho BeagleBon Black
+- Dùng cấu hình mặc định:
+```bash
+make beaglebone_defconfig
+```
+
+- Mở menu cấu hình:
+```bash
+make menuconfig
+```
+
+## Bước 5: Cấu hình hệ thống (menuconfig)
+- Chạy lệnh `make menuconfig` và thiết lập các thông số sau:
+### 5.1. Target Options
+- Target Architecture: ARM (little endian)
+- Target Architecture Variant: cortex-A8
+- Target ABI: EABIhf
+- Floating point strategy: VFPv3-D16
+### 5.2. Toolchain
+- Toolchain type: Buildroot toolchain
+- Kernel Headers: Same as kernel being built
+- C library: glibc
+### 5.3. Kernel
+- Kernel version: Latest CIP SLTS version (5.10.162-cip24)
+- Kernel configuration: Using a defconfig file
+- Defconfig name: omap2plus
+- Device Tree Support: Tích chọn
+- Device Tree Bold names: am335x-boneblack
+### 5.4. System Configuration
+- Root password: (Để trống hoặc đặt tùy ý)
+- Run a getty (login prompt) after boot: ttyS0 (Tốc độ 115200)
+
+## Bước 6: Build và kết quả
+- Sau khi cấu hình xong hệ thống `make menuconfig` thì ta chạy lệnh build là lệnh `make -j2`
+
+
+(Nếu máy có cấu hình cao, gb nhiều thì có thể chạy `make -j4` hoặc `make -j$(nproc)`)
+
+- Và sau khi build khoảng 3h - 4h thì ta được kết quả như ảnh dưới đây:
+<img width="552" height="96" alt="image" src="https://github.com/user-attachments/assets/bb75bf91-e104-4ba0-ba39-8d67f80010b6" />
+
