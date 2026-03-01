@@ -15,9 +15,9 @@ unzip wget rsync fastjar java-wrappers bison flex texinfo -y
 ```
 ## Bước 2: Tải và chuẩn bị Buildroot
 - Di chuyển thư mục về home:
-  ```bash
-  cd ~
-  ```
+```bash
+cd ~
+```
 
 - Clone Buildroot từ Github
 ```bash
