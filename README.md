@@ -127,6 +127,23 @@ sudo cp my_hello /mnt/
 sudo umount /mnt
 ```
 
+### Bước 4: Chạy chương trình trên BBB
+- Cắm SD vào BBB và boot:
+```bash
+screen /dev/ttyUSB0 115200
+```
+- Login:
+```bash
+login: root
+```
+- Chạy chương trình:
+```bash
+./my_hello
+```
+- Kết quả thu được là ảnh dưới đây:
+
+<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/38ef0efd-127a-4199-b9cc-4937aade899b" />
+
 
 
 
