@@ -66,12 +66,27 @@ make menuconfig
 - Root password: (Để trống hoặc đặt tùy ý)
 - Run a getty (login prompt) after boot: ttyS0 (Tốc độ 115200)
 
-## Bước 6: Build và kết quả
+### Bước 6: Build và kết quả
 - Sau khi cấu hình xong hệ thống `make menuconfig` thì ta chạy lệnh build là lệnh `make -j2`
-
 
 (Nếu máy có cấu hình cao, gb nhiều thì có thể chạy `make -j4` hoặc `make -j$(nproc)`)
 
 - Và sau khi build khoảng 3h - 4h thì ta được kết quả như ảnh dưới đây:
 <img width="552" height="96" alt="image" src="https://github.com/user-attachments/assets/bb75bf91-e104-4ba0-ba39-8d67f80010b6" />
+
+## III. Ghi vào SD card
+
+- Để copy `sdcard.img` vào thẻ nhớ ta sử dụng lệnh
+```bash
+sudo dd if=output/images/sdcard.img of=/dev/sdb bs=4M status=progress
+sync
+```
+
+- Kết quả thu được Image build từ Buildroot đã boot thành công trên BeagleBone Black (BBB)
+<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/9f903223-9464-4f71-ac74-a633e8dd1ccd" />
+<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/749ac259-85c2-4814-b081-31f1bec03da5" />
+
+
+
+
 
