@@ -86,6 +86,48 @@ sync
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/9f903223-9464-4f71-ac74-a633e8dd1ccd" />
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/749ac259-85c2-4814-b081-31f1bec03da5" />
 
+## IV. Tích hợp ứng dụng tùy biến
+### Bước 1: Viết chương trình C
+- Tạo file:
+`nano my_hello.c`
+- Nội dung:
+```bash
+#include <stdio.h>
+
+int main() {
+    printf("=====================================\n");
+    printf("Hello World! Build by Buildroot Toolchain_NhatThanh\n");
+    printf("Nhom 6_HDH_Nhung\n");
+    printf("=====================================\n");
+    return 0;
+}
+```
+
+### Bước 2: Biên dịch bằng Toolchain của Buildroot
+- Thêm toolchain vào PATH:
+```bash
+export PATH=$PATH:~/buildroot/output/host/bin
+```
+- Biên dịch:
+```bash
+arm-buildroot-linux-gnueabihf-gcc my_hello.c -o my_hello
+```
+
+### Bước 3: Copy vào chương trình vào Rootfs trên thẻ SD
+- Mount trực tiếp SD card trên Ubuntu:
+```bash
+sudo mount /dev/sdX2 /mnt
+```
+- Copy file:
+```bash
+sudo cp my_hello /mnt/
+```
+- Unmount:
+```bash
+sudo umount /mnt
+```
+
+
 
 
 
