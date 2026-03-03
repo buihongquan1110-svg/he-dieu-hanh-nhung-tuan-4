@@ -143,6 +143,8 @@ login: root
 - Kết quả thu được là ảnh dưới đây:
 
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/38ef0efd-127a-4199-b9cc-4937aade899b" />
+<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/abfc8520-753e-44ce-b3b9-d91b77502311" />
+
 
 
 
